@@ -22,7 +22,7 @@ void snake(int food) {
 void feed(void(*ptrFunc)(int), int food) {
     if (food < 10) {
         printf("Not enough food\n");
-        
+
         return;
     }
 
