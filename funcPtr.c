@@ -1,27 +1,29 @@
 #include <stdio.h>
 
-void foo() {
-    printf("foo\n");
+#define SIZE 3
+
+void cat() {
+    printf("meow\n");
 }
 
-int bar(int a) {
-    printf("bar: %d\n", a);
+void dog() {
+    printf("bark\n");
+}
 
-    return a;
+void snake() {
+    printf("fsssss\n");
 }
 
 int main() {
-    // declaration void()
-    void(*ptrFoo)();
-    ptrFoo = &foo;
+    void(*animals[])() = { &cat, &dog, &snake };
 
-    // call syntax
-    (*ptrFoo)();
-    ptrFoo();
+    // animals[0] = &cat;
+    // animals[1] = &dog;
+    // animals[2] = &snake;
 
-    // declaration int(int)
-    int(*ptrBar)(int) = &bar;
-    ptrBar(42);
+    for (int i = 0; i < SIZE; i++) {
+        animals[i]();
+    }
 
     return 0;
 }
