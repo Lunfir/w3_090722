@@ -109,7 +109,11 @@ int main()
 {
     Point pointA(1, 12);
     Point pointB = Point(12, 13);
-    Point pointSum = pointA;
+
+    // Point pointSum = pointA; // copy constructor
+
+    Point pointSum;
+    pointSum = pointA; // assignment operator
 
     std::cout << pointSum << std::endl;
     std::cout << pointA << std::endl;
