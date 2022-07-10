@@ -5,13 +5,6 @@
 class Point 
 {
 public:
-    void pointPrint() {
-        std::cout   << "(" 
-                    << this->x << ", " 
-                    << this->y << ")" 
-                    << std::endl;
-    }
-
     int pointEqual(Point other) {
         return this->x == other.x && this->y == other.y;
     }
@@ -63,6 +56,26 @@ private:
     double y;
 };
 
+std::ostream& operator<<(std::ostream& os, /*const*/ Point& obj)
+{
+    os  << "(" 
+        << obj.getX() << ", " 
+        << obj.getY() << ")";
+
+    return os;
+}
+
+// Point operator+(Point& a, Point& b)
+// {
+//     Point res;
+
+//     res.setX(a.getX() + b.getX());
+//     res.setY(a.getY() + b.getY());
+
+//     return res;
+// }
+
+
 int main()
 {
     Point pointA, pointB, pointSum;
@@ -73,8 +86,8 @@ int main()
     pointB.setX(12);
     pointB.setY(13);
 
-    pointA.pointPrint();
-    pointB.pointPrint();
+    std::cout << pointA << std::endl;
+    std::cout << pointB << std::endl;
 
     std::cout   << "is equal: "
                 << pointA.pointEqual(pointB)
@@ -85,10 +98,10 @@ int main()
                 << std::endl;
     
     pointA += pointB;
-    pointA.pointPrint();
-    pointB.pointPrint();
+    std::cout << pointA << std::endl;
+    std::cout << pointB << std::endl;
 
     // pointSum = pointA.operator+(pointB);
     pointSum = pointA + pointB;
-    pointSum.pointPrint();
+    std::cout << pointSum << std::endl;
 }
