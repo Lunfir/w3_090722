@@ -5,20 +5,22 @@
 class Point 
 {
 public:
-    int pointEqual(Point other) {
+    int pointEqual(Point other) const
+    {
         return this->x == other.x && this->y == other.y;
     }
 
-    double pointDistance(Point other) {
-        return hypot(this->x-other.x, this->y-other.y);
+    double pointDistance(Point other)
+    {
+        return hypot(this->x - other.x, this->y - other.y);
     }
 
-    double getX()
+    double getX() const
     {
         return this->x;
     }
 
-    double getY()
+    double getY() const
     {
         return this->y;
     }
@@ -55,14 +57,14 @@ private:
     double x;
     double y;
 
-    friend std::ostream& operator<<(std::ostream& os, /*const*/ Point& obj);
+    friend std::ostream& operator<<(std::ostream& os, const Point& obj);
 };
 
-std::ostream& operator<<(std::ostream& os, /*const*/ Point& obj)
+std::ostream& operator<<(std::ostream& os, const Point& obj)
 {
     os  << "(" 
-        << obj.x << ", " 
-        << obj.y << ")";
+        << obj.getX() << ", " 
+        << obj.getY() << ")";
 
     return os;
 }
