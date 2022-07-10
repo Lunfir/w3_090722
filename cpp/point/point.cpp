@@ -54,13 +54,15 @@ public:
 private:
     double x;
     double y;
+
+    friend std::ostream& operator<<(std::ostream& os, /*const*/ Point& obj);
 };
 
 std::ostream& operator<<(std::ostream& os, /*const*/ Point& obj)
 {
     os  << "(" 
-        << obj.getX() << ", " 
-        << obj.getY() << ")";
+        << obj.x << ", " 
+        << obj.y << ")";
 
     return os;
 }
