@@ -105,35 +105,35 @@ std::ostream& operator<<(std::ostream& os, const Point& obj)
     return os;
 }
 
-int main()
-{
-    Point pointA(1, 12);
-    Point pointB = Point(12, 13);
+// int main()
+// {
+//     Point pointA(1, 12);
+//     Point pointB = Point(12, 13);
 
-    // Point pointSum = pointA; // copy constructor
+//     // Point pointSum = pointA; // copy constructor
 
-    Point pointSum;
-    pointSum = pointA; // assignment operator
+//     Point pointSum;
+//     pointSum = pointA; // assignment operator
 
-    std::cout << pointSum << std::endl;
-    std::cout << pointA << std::endl;
-    std::cout << pointB << std::endl;
+//     std::cout << pointSum << std::endl;
+//     std::cout << pointA << std::endl;
+//     std::cout << pointB << std::endl;
 
-    std::cout   << "is equal: "
-                << pointA.pointEqual(pointB)
-                << std::endl;
+//     std::cout   << "is equal: "
+//                 << pointA.pointEqual(pointB)
+//                 << std::endl;
 
-    std::cout   << "distance: "
-                << pointA.pointDistance(pointB)
-                << std::endl;
+//     std::cout   << "distance: "
+//                 << pointA.pointDistance(pointB)
+//                 << std::endl;
     
-    pointA += pointB;
-    std::cout << pointA << std::endl;
-    std::cout << pointB << std::endl;
+//     pointA += pointB;
+//     std::cout << pointA << std::endl;
+//     std::cout << pointB << std::endl;
 
-    // pointSum = pointA.operator+(pointB);
-    std::cout << "PointSum:" << std::endl;
-    // pointSum = pointA + 12;
-    pointSum = pointA + pointB;
-    std::cout << pointSum << std::endl;
-}
+//     // pointSum = pointA.operator+(pointB);
+//     std::cout << "PointSum:" << std::endl;
+//     // pointSum = pointA + 12;
+//     pointSum = pointA + pointB;
+//     std::cout << pointSum << std::endl;
+// }
