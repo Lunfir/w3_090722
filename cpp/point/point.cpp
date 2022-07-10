@@ -53,6 +53,26 @@ public:
         return res;
     }
 
+    Point operator+(int other)
+    {
+        Point res;
+
+        res.x = this->x + other;
+        res.y = this->y + other;
+
+        return res;
+    }
+
+    Point& operator=(const Point& other)
+    {
+        std::cout << __PRETTY_FUNCTION__ << std::endl;
+
+        this->x = other.x;
+        this->y = other.y;
+
+        return *this;
+    }
+
 private:
     double x;
     double y;
@@ -68,17 +88,6 @@ std::ostream& operator<<(std::ostream& os, const Point& obj)
 
     return os;
 }
-
-// Point operator+(Point& a, Point& b)
-// {
-//     Point res;
-
-//     res.setX(a.getX() + b.getX());
-//     res.setY(a.getY() + b.getY());
-
-//     return res;
-// }
-
 
 int main()
 {
@@ -106,6 +115,10 @@ int main()
     std::cout << pointB << std::endl;
 
     // pointSum = pointA.operator+(pointB);
+    std::cout << "PointSum:" << std::endl;
+    // pointSum = pointA + 12;
     pointSum = pointA + pointB;
     std::cout << pointSum << std::endl;
+
+
 }
