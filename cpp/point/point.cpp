@@ -5,6 +5,19 @@
 class Point 
 {
 public:
+    Point()
+    {
+        std::cout << __PRETTY_FUNCTION__ << std::endl;
+    }
+
+    Point(int x, int y)
+    {
+        std::cout << __PRETTY_FUNCTION__ << std::endl;
+
+        this->x = x;
+        this->y = y;
+    }
+
     int pointEqual(Point other) const
     {
         return this->x == other.x && this->y == other.y;
@@ -91,13 +104,9 @@ std::ostream& operator<<(std::ostream& os, const Point& obj)
 
 int main()
 {
-    Point pointA, pointB, pointSum;
-
-    pointA.setX(1);
-    pointA.setY(12);
-
-    pointB.setX(12);
-    pointB.setY(13);
+    Point pointA(1, 12);
+    Point pointB = Point(12, 13);
+    Point pointSum;
 
     std::cout << pointA << std::endl;
     std::cout << pointB << std::endl;
