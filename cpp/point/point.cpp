@@ -1,7 +1,7 @@
 #include <iostream>
 #include <cmath>
 
-// public (default for struct), private (default for class), protected
+
 class Point 
 {
 public:
@@ -40,6 +40,24 @@ public:
         this->y = y;
     }
 
+    Point& operator+=(Point& other)
+    {
+        this->x += other.x;
+        this->y += other.y;
+
+        return *this;
+    }
+
+    Point operator+(Point& other)
+    {
+        Point res;
+
+        res.x = this->x + other.x;
+        res.y = this->y + other.y;
+
+        return res;
+    }
+
 private:
     double x;
     double y;
@@ -47,7 +65,7 @@ private:
 
 int main()
 {
-    Point pointA, pointB;
+    Point pointA, pointB, pointSum;
 
     pointA.setX(1);
     pointA.setY(12);
@@ -65,4 +83,12 @@ int main()
     std::cout   << "distance: "
                 << pointA.pointDistance(pointB)
                 << std::endl;
+    
+    pointA += pointB;
+    pointA.pointPrint();
+    pointB.pointPrint();
+
+    // pointSum = pointA.operator+(pointB);
+    pointSum = pointA + pointB;
+    pointSum.pointPrint();
 }
