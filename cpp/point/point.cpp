@@ -5,12 +5,7 @@
 class Point 
 {
 public:
-    Point()
-    {
-        std::cout << __PRETTY_FUNCTION__ << std::endl;
-    }
-
-    Point(int x, int y)
+    Point(int x = 0, int y = 0)
     {
         std::cout << __PRETTY_FUNCTION__ << std::endl;
 
@@ -108,6 +103,7 @@ int main()
     Point pointB = Point(12, 13);
     Point pointSum;
 
+    std::cout << pointSum << std::endl;
     std::cout << pointA << std::endl;
     std::cout << pointB << std::endl;
 
@@ -128,6 +124,4 @@ int main()
     // pointSum = pointA + 12;
     pointSum = pointA + pointB;
     std::cout << pointSum << std::endl;
-
-
 }
