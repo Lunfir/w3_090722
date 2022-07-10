@@ -13,6 +13,14 @@ public:
         this->y = y;
     }
 
+    Point(const Point& other)
+    {
+        std::cout << __PRETTY_FUNCTION__ << std::endl;
+
+        this->x = other.x;
+        this->y = other.y;
+    }
+
     int pointEqual(Point other) const
     {
         return this->x == other.x && this->y == other.y;
@@ -101,7 +109,7 @@ int main()
 {
     Point pointA(1, 12);
     Point pointB = Point(12, 13);
-    Point pointSum;
+    Point pointSum = pointA;
 
     std::cout << pointSum << std::endl;
     std::cout << pointA << std::endl;
